@@ -1,11 +1,11 @@
 const display = document.querySelector(".display");
-const buttons = document.querySelectorAll("button"); // Use querySelectorAll to select all buttons
+const buttons = document.querySelectorAll("button"); 
 const operators = ["%", "*", "/", "+", "-", "="];
 let output = "";
 
 const calculate = (btnvalue) => {
     if (btnvalue === "=" && output !== "") {
-        output = eval(output.replace("%", "/100")); // Be cautious with using eval()
+        output = eval(output.replace("%", "/100")); 
     } else if (btnvalue === "AC") {
         output = "";
     } else if (btnvalue === "DEL") {
@@ -14,7 +14,7 @@ const calculate = (btnvalue) => {
         if (output === "" && operators.includes(btnvalue)) return;
         output += btnvalue;
     }
-    display.value = output; // Update display after calculation
+    display.value = output; 
 };
 
 buttons.forEach((button) => {
